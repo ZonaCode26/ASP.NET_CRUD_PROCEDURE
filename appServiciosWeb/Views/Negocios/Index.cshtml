@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Dominio.Entidades.tb_herramienta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AgregarHerramienta")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idHer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.desHer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idprov)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preUni)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stock)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idHer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.desHer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idprov)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.preUni)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stock)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "ActualizarHerramienta", new {  id=item.idHer }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.idHer }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.idHer })
+        </td>
+    </tr>
+}
+
+</table>
